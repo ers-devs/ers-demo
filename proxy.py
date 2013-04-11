@@ -19,6 +19,7 @@ class CommonProxyClient(proxy.ProxyClient):
 
     def handleResponsePart(self, buffer):
         # ipdb.set_trace()
+        """
         if self.father.is_cacheable():
             # print "caching"
             cache.add_data(self.father.request_id, 'http:content', buffer, provenance)
@@ -27,6 +28,8 @@ class CommonProxyClient(proxy.ProxyClient):
                 headers_string, provenance)
         #else:
         #   print "will not cache"
+
+        """
         proxy.ProxyClient.handleResponsePart(self, buffer)
 
 class CommonProxyClientFactory(proxy.ProxyClientFactory):
